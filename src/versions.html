@@ -9,14 +9,15 @@
   <script data-dojo-config="async:1" src="js/dojo/dojo.js"></script>
 
   <script type="text/javascript">
-    require(['dojo', 'dojo/string', 'dojo/domReady!'], function(dojo, string) {
+    require(['dojo', 'put-selector/put', 'dojo/domReady!'], function(dojo, put) {
 
       var versions = [
         {name:'dojo', version: dojo.version.toString()}
       ];
 
+      var dl = dojo.byId('versions');
       dojo.forEach(versions, function(item){
-        dojo.place( string.substitute('<dt>${name}</dt><dd>${version}</dd>', item), 'versions', 'last');
+        put(dl, 'dt $, dd $', item.name, item.version);
       });
       
     });    

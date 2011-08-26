@@ -14,6 +14,7 @@ dependencies = {
     prefixes: [
         [ 'dijit', '../dijit' ],
         [ 'dojox', '../dojox' ],
+        [ 'put-selector', '../put-selector']
         [ 'app', '../app' ]
     ],
 

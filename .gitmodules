@@ -10,3 +10,6 @@
 [submodule "src/js/dojox"]
 	path = src/js/dojox
 	url = https://github.com/dojo/dojox.git
+[submodule "src/js/put-selector"]
+	path = src/js/put-selector
+	url = https://github.com/kriszyp/put-selector.git
