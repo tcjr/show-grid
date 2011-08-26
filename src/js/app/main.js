@@ -13,7 +13,11 @@
  *
  * In all cases, the function that is passed to define() is only invoked once, and the return value is cached.
  */
+console.debug("in app/main.js...");
 define([ 'dojo', './Dialog', 'dojo/domReady!' ], function (dojo, Dialog) {
+  
+  console.debug("in app.main...");
+  
 	var app = {
 		dialog: new Dialog().placeAt(document.body)
 	};

@@ -13,12 +13,12 @@
          Below, we’re enabling the new AMD-compliant loader. This is the only configuration option that *must* be set
          before dojo.js is loaded; without it, Dojo will use the backwards-compatible synchronous loader.
          The remainder of Dojo configuration occurs within _base.js. -->
-    <script data-dojo-config="async:1" src="js/dojo/dojo.js" defer></script>
+    <script data-dojo-config="async:1" src="js/dojo/dojo.js"></script>
 
     <!-- This is removed automatically by the Dojo Boilerplate build script in production. -->
     <script>isDebug = true;</script>
 
     <!-- _base.js is our application’s entry point. It is a loader-style build control script. -->
-    <script src="js/app/_base.js" defer></script>
+    <script src="js/app/_base.js"></script>
 </body>
 </html>

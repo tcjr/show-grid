@@ -42,6 +42,7 @@ cd "$UTILDIR"
 
 # copy the index.html and make it production-friendly
 cp "$SRCDIR/index.html" "$DISTDIR/index.html"
+cp "$SRCDIR/versions.html" "$DISTDIR/versions.html"
 
 sed -i '' -e "s/    <!-- This is removed automatically by the Dojo Boilerplate build script in production. -->//" \
  -e "s/<script>isDebug = true;<\/script>//" "$DISTDIR/index.html"

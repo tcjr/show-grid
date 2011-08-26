@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Version Info</title>
+  <link rel="stylesheet" href="js/app/resources/app.css">
+</head>
+<body>
+  <script data-dojo-config="async:1" src="js/dojo/dojo.js"></script>
+
+  <script type="text/javascript">
+    require(['dojo', 'dojo/string', 'dojo/domReady!'], function(dojo, string) {
+
+      var versions = [
+        {name:'dojo', version: dojo.version.toString()}
+      ];
+
+      dojo.forEach(versions, function(item){
+        dojo.place( string.substitute('<dt>${name}</dt><dd>${version}</dd>', item), 'versions', 'last');
+      });
+      
+    });    
+  </script>
+  
+  <h1>Versions</h1>
+  <dl id="versions">
+  </dl>
+  
+</body>
+</html>
