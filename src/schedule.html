@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Schedule</title>
+  <link rel="stylesheet" href="js/app/resources/app.css">
+  <style type="text/css">
+  body {
+    font-size: 62.5%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  
+  .event-grid table {
+      table-layout: fixed;
+      width: 100%;
+  }
+
+  .event-grid .egrid-header th {
+    /*style*/
+    font-family: "Impact";
+    font-size: 1.6em;
+    font-weight: normal;
+    /*structure*/
+    height: 3.2em;
+    padding: 0 0 0.5em;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .event-grid .egrid-body td.venue {
+    border: medium none !important;
+    padding: 0 !important;
+    vertical-align: top;
+  }
+  
+  .event-grid .egrid-body td.venue .artist-lineup {
+    position: relative;
+  }
+  
+  .artist-lineup .show-box {
+    /*style*/
+    background-color: blue;
+    color: white;
+    
+    /*structure*/
+    position: absolute;
+    margin: 0 3px 3px;
+    width: 98%;
+  }
+  
+  .artist-lineup .show-container {
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    width: 98%;
+  }
+  
+  .artist-lineup .show-title {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.4em;
+  }
+  .artist-lineup .show-time {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.2em;
+  }
+  </style>
+</head>
+<body>
+  <script data-dojo-config="async:1" src="js/dojo/dojo.js"></script>
+
+  <script type="text/javascript">
+    require(['dojo', 'sgrid/EventGrid', 'dojo/domReady!'], function(dojo, EGrid) {
+
+      var theGrid = new EGrid({}, 'main');
+      
+    });    
+  </script>
+  
+  <h1>Grid</h1>
+  <div id="main">
+  </div>
+  
+</body>
+</html>
