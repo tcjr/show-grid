@@ -1,34 +1,6 @@
-define(["dojo", "put-selector/put"], 
-function(dojo, put) {
+define(["dojo", "put-selector/put", "dojo/date"], 
+function(dojo, put, DD) {
 
-  var SCHEDULE_DATA =
-      [
-        {
-          stage: {
-            name: "My house"
-          },
-          shows: [
-            {
-              name: "Good Band",
-              start: "12:00pm",
-              end: "1:00pm"
-            },
-            {
-              name: "Great Band",
-              start: "1:30pm",
-              end: "3:15pm"
-            },
-            {
-              name: "Awesome Band",
-              start: "4:00pm",
-              end: "7:00pm"
-            }
-      
-          ]
-        }
-      ];
-
-  
 
   /* 
    Lifecycle refresher:
@@ -45,6 +17,7 @@ function(dojo, put) {
    }
   
   return dojo.declare([], {
+    showData: null,
     
     constructor: function(opts, srcNodeRef) {
       console.debug("CTOR");
@@ -57,15 +30,19 @@ function(dojo, put) {
 				this.srcNodeRef = srcNodeRef = srcNodeRef.nodeType ? srcNodeRef : dojo.byId(srcNodeRef);
 			} 
       this.create(opts, srcNodeRef)
+      this.inherited(arguments);
     },
     
     preamble: function() {
+      this.inherited(arguments);
       console.debug("PREAMBLE");
     },
 
     // =====
     
     create: function(opts, srcNodeRef) {
+
+      this.showData = opts.showData;
 
       var domNode = srcNodeRef || put("div");
       this.domNode = domNode;
@@ -92,11 +69,14 @@ function(dojo, put) {
     },
     
     renderHeader: function() {
-      //put(this.headerNode, 'th, th $, th $, th $', 'Stage One', 'Stage Two', 'Stage Three');
-      
+      console.debug("this. = %o", this);
       put(this.headerNode, 'th'); // no header content for times column
-      dojo.forEach(['Stage One', 'Stage Two', 'Stage Three'], function(stageName) {
-        put(this.headerNode, 'th $', stageName);
+      // dojo.forEach(['Stage One', 'Stage Two', 'Stage Three'], function(stageName) {
+      //   put(this.headerNode, 'th $', stageName);
+      // }, this);
+
+      dojo.forEach(this.showData, function(showsInfo) {
+        put(this.headerNode, 'th $', showsInfo.stage.name);
       }, this);
 
     },
@@ -105,36 +85,35 @@ function(dojo, put) {
       // var rb = put(this.bodyNode, 'th $, td.venue $, td.venue $, td.venue $', 'times down this column', 
       //   'stage 1 acts down this column', 'stage 2 acts down this column', 'stage 3 acts down this column');
 
-      var tempLineupData = [
-        [ {name:'Early 1', start:'0'}, 
-          {name:'Afternoon 1', start:'120'}, 
-          {name:'Evening 1', start:'300'} ],
-        [ {name:'Early 2', start:'0'}, 
-          {name:'Afternoon 2', start:'120'}, 
-          {name:'Evening 2', start:'300'} ],
-        [ {name:'Early 3', start:'0'}, 
-          {name:'Afternoon 3', start:'120'}, 
-          {name:'Evening 3', start:'300'} ],
-      ];
       put(this.bodyNode, 'th.times'); // TODO: build hour list
       
       var venueLineupNodes = [];
-      dojo.forEach(tempLineupData, function(stageLineup) {
+      
+      dojo.forEach(this.showData, function(stageLineup) {
+        
+        // create a single column for all the shows
         var venueLineupNode = put(this.bodyNode, 'td.venue div.artist-lineup');
-        dojo.forEach(stageLineup, function(setInfo ) {
-          
+        
+        dojo.forEach(stageLineup.shows, function(setInfo ) {
+
           var showBox = put(venueLineupNode, 'div.show-box');
+          // the show box is sized and placed based on the time information
+
+
+          var PX_PER_MIN = 2;
+          var START_OF_DAY = new Date('09/22/2011 07:00 PM');
+          var startOffset = (DD.difference(START_OF_DAY, new Date(setInfo.start), 'minute') * PX_PER_MIN);
+          var height = (parseInt(setInfo.length) * PX_PER_MIN) - 1; // shave a pixel off
+
+          console.debug("math... startOffset = %o; height = %o", startOffset, height);
+          
           dojo.style(showBox, {
-            height: '59px', // calculate from show length or end time
-            //'line-height': '59px',
-            top: setInfo.start+'px' // startTimeToOffset(setInfo.start)
+            height: height+'px', // calculate from show length or end time
+            top: startOffset+'px'
           });
-          //showBox.innerHTML = "<span><em>"+setInfo.name+"</em></span>"
 
           put(showBox, 'div.show-container strong.show-title $ +span.show-time $', setInfo.name, setInfo.start)
 
-          //<div class="ds-event-container"><strong style="font-size:1.4em;" class="ds-event-title"><a href="/band/tab-the-band">TAB the Band</a></strong><span style="font-size:1.4em;" class="ds-time-range">12:15 - 1:00</span></div>
-          
         }, this);
 
         venueLineupNodes.push(venueLineupNode);
@@ -178,6 +157,8 @@ function(dojo, put) {
     
     setEventData: function(data) {
       this.showData = data;
+      // render?
+      
     }
     
   });

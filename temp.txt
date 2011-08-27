@@ -1,0 +1,240 @@
+// var FAKE_SCHEDULE_DATA =
+//     [
+//       {
+//         stage: {
+//           name: "My house"
+//         },
+//         shows: [
+//           {
+//             name: "Good Band",
+//             start: '08/27/2011 11:00 AM',
+//             length: '90'
+//           },
+//           {
+//             name: "Great Band",
+//             start: '08/27/2011 01:00 PM',
+//             length: '75'
+//           },
+//           {
+//             name: "Awesome Band",
+//             start: '08/27/2011 04:00 PM',
+//             length: '120'
+//           }
+//     
+//         ]
+//       }
+//     ];
+
+    var SCHEDULE_DATA =
+        [
+          {
+            stage: {
+              name: "Arnolds Bar and Grill"
+            },
+            shows: [
+              {
+                name: "Two Man Gentlemen Band",
+                start: '09/23/2011 12:00 AM',
+                length: '45'
+              },
+              {
+                name: "Josh Eagle and the Harvest City",
+                start: '09/22/2011 11:00 PM',
+                length: '45'
+              },
+              {
+                name: "Adam Arcuragi & The Lupine Chorale Society",
+                start: '09/22/2011 10:00 PM',
+                length: '45'
+              },
+              {
+                name: "Joshua P. James and the Paper Planes",
+                start: '09/22/2011 9:00 PM',
+                length: '45'
+              }
+            ]
+          },
+
+          {
+            stage: {
+              name: "Dewey's Pizza Main Stage at Grammer's"
+            },
+            shows: [
+              {
+                name: "The Joy Formidable",
+                start: '09/22/2011 09:30 PM',
+                length: '60'
+              },
+              {
+                name: "U.S. Royalty",
+                start: '09/22/2011 08:00 PM',
+                length: '45'
+              },
+              {
+                name: "July For Kings",
+                start: '09/22/2011 7:00 PM',
+                length: '45'
+              }
+            ]
+          },
+          
+          {
+            stage: {
+              name: "The Drinkery"
+            },
+            shows: [
+              {
+                name: "Brass Bed",
+                start: '09/23/2011 12:30 AM',
+                length: '45'
+              },
+              {
+                name: "The Ready Stance",
+                start: '09/22/2011 11:30 PM',
+                length: '45'
+              },
+              {
+                name: "Soapland",
+                start: '09/22/2011 10:30 PM',
+                length: '45'
+              },
+              {
+                name: "The Aviation Orange",
+                start: '09/22/2011 9:00 PM',
+                length: '75'
+              }
+            ]
+          },
+
+          {
+            stage: {
+              name: "Arnolds Bar and Grill"
+            },
+            shows: [
+              {
+                name: "Two Man Gentlemen Band",
+                start: '09/23/2011 12:00 AM',
+                length: '45'
+              },
+              {
+                name: "Josh Eagle and the Harvest City",
+                start: '09/22/2011 11:00 PM',
+                length: '45'
+              },
+              {
+                name: "Adam Arcuragi & The Lupine Chorale Society",
+                start: '09/22/2011 10:00 PM',
+                length: '45'
+              },
+              {
+                name: "Joshua P. James and the Paper Planes",
+                start: '09/22/2011 9:00 PM',
+                length: '45'
+              }
+            ]
+          },
+
+          {
+            stage: {
+              name: "Dewey's Pizza Main Stage at Grammer's"
+            },
+            shows: [
+              {
+                name: "The Joy Formidable",
+                start: '09/22/2011 09:30 PM',
+                length: '60'
+              },
+              {
+                name: "U.S. Royalty",
+                start: '09/22/2011 08:00 PM',
+                length: '45'
+              },
+              {
+                name: "July For Kings",
+                start: '09/22/2011 7:00 PM',
+                length: '45'
+              }
+            ]
+          },
+          
+          {
+            stage: {
+              name: "The Drinkery"
+            },
+            shows: [
+              {
+                name: "Brass Bed",
+                start: '09/23/2011 12:30 AM',
+                length: '45'
+              },
+              {
+                name: "The Ready Stance",
+                start: '09/22/2011 11:30 PM',
+                length: '45'
+              },
+              {
+                name: "Soapland",
+                start: '09/22/2011 10:30 PM',
+                length: '45'
+              },
+              {
+                name: "The Aviation Orange",
+                start: '09/22/2011 9:00 PM',
+                length: '75'
+              }
+            ]
+          }, 
+          
+          {
+            stage: {
+              name: "Mrs Pitiful's"
+            },
+            shows: [
+              {
+                name: "500 Miles to Memphis",
+                start: '09/22/2011 11:45 AM',
+                length: '60'
+              },
+              {
+                name: "Aunt Martha",
+                start: '09/22/2011 10:30 PM',
+                length: '60'
+              },
+              {
+                name: "Bro. Stephen",
+                start: '09/22/2011 09:15 PM',
+                length: '60'
+              },
+              {
+                name: "Pokey LaFarge & The South City Three",
+                start: '09/22/2011 8:00 PM',
+                length: '60'
+              }
+            ]
+          }, 
+          
+          {
+            stage: {
+              name: "Cincinnati Club Room"
+            },
+            shows: [
+              {
+                name: "Those Darlins",
+                start: '09/22/2011 11:30 AM',
+                length: '60'
+              },
+              {
+                name: "The Sundresses",
+                start: '09/22/2011 10:00 PM',
+                length: '75'
+              },
+              {
+                name: "The Ridges",
+                start: '09/22/2011 09:00 PM',
+                length: '50'
+              }
+            ]
+          }
+          
+        ];
+
