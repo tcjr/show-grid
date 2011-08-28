@@ -26,6 +26,10 @@
     text-align: center;
     vertical-align: middle;
   }
+
+  .event-grid .egrid-header th.time {
+    width: 5em;
+  }
   
   .event-grid .egrid-body td.venue {
     border: medium none !important;
@@ -35,6 +39,26 @@
   
   .event-grid .egrid-body td.venue .artist-lineup {
     position: relative;
+  }
+  
+  .event-grid ul.schedule-times {
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    text-align: center;
+    list-style: none outside none;
+  }
+
+  .event-grid ul.schedule-times li {
+    border-right: 0 none;
+    border-style: dotted none none;
+    border-width: 1px 0 0;
+    width: 900px;
+    border-color: #999999;
+    
+    height: 29px;
+    padding: 0 0 0 0.5em;
+    text-align: left;
   }
   
   .artist-lineup .show-box {
@@ -66,6 +90,7 @@
     width: 100%;
     font-size: 1.2em;
   }
+  
   </style>
 </head>
 <body>
@@ -75,21 +100,24 @@
 
     require(['dojo', 'sgrid/EventGrid', 'dojo/date', 'app/TEMP_GLOBAL_DATA', 'dojo/domReady!'], function(dojo, EGrid, DD) {
 
-      var thur = dojo.map(GLOBAL_THURSDAY, function(stageData) {
-        var mappedShows = dojo.map(stageData.shows, function(show) {
-          var day = (show.time.indexOf('AM')==-1) ? '09/22/2011 ' : '09/23/2011 ';
-          return { name: show.name, start: day+show.time, length: 45 };
+      // Data fixup: add in show lengths
+      dojo.forEach(GLOBAL_FEST_DATA.show_days[0].stages, function(stageData) {
+        
+        dojo.forEach(stageData.shows, function(show) {
+          // estimate show length at 45 mins
+          if (!('length' in show)) {
+            show.length = 45;
+          }
         });
-        return { shows: mappedShows, stage: {name: stageData.stage} };
       });
-
-      var theGrid = new EGrid({showData: thur}, 'main');
+      
+      var thurGrid = new EGrid({showDay: GLOBAL_FEST_DATA.show_days[0]}, 'thursday-grid');
       
     });    
   </script>
   
   <h1>Thursday</h1>
-  <div id="main">
+  <div id="thursday-grid">
   </div>
   
 </body>
