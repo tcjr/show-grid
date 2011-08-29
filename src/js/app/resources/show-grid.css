@@ -1,0 +1,84 @@
+.event-grid table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse:collapse;
+}
+
+.event-grid .egrid-body {
+  background-image: url('bg-grey.png');
+}
+
+.event-grid .egrid-header th {
+  /*style*/
+  font-family: "Impact";
+  font-size: 1.6em;
+  font-weight: normal;
+  /*structure*/
+  height: 3.2em;
+  padding: 0 0 0.5em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.event-grid .egrid-header th.time {
+  width: 5em;
+}
+
+.event-grid .egrid-body td.venue {
+  border: medium none !important;
+  padding: 0 !important;
+  vertical-align: top;
+}
+
+.event-grid .egrid-body td.venue .artist-lineup {
+  position: relative;
+}
+
+.event-grid ul.schedule-times {
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  text-align: center;
+  list-style: none outside none;
+}
+
+.event-grid ul.schedule-times li {
+  height: 30px;
+  padding: 0 0 0 0.5em;
+  text-align: left;
+}
+
+.artist-lineup {
+  background-color: red;
+}
+
+.artist-lineup .show-box {
+  /*style*/
+  background-color: blue;
+  color: white;
+  
+  /*structure*/
+  position: absolute;
+  /* margin: 0 3px 3px; */
+  margin: 0 0 0;
+  width: 98%;
+}
+
+.artist-lineup .show-container {
+  display: inline-block;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  width: 98%;
+}
+
+.artist-lineup .show-title {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.4em;
+}
+.artist-lineup .show-time {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.2em;
+}
