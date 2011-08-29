@@ -85,9 +85,9 @@ function(dojo, put, DD, DF) {
       console.debug("renderHeader; this=%o", this);
       put(this.headerNode, 'th.time'); // no header content for times column
 
-      dojo.forEach(this.showDay.stages, function(showsInfo) {
+      dojo.forEach(this.showDay.venues, function(showsInfo) {
         //console.debug("showsInfo = %o", showsInfo);
-        put(this.headerNode, 'th $', showsInfo.stage.name);
+        put(this.headerNode, 'th $', showsInfo.venue.name);
       }, this);
 
     },
@@ -105,12 +105,12 @@ function(dojo, put, DD, DF) {
       
       var venueLineupNodes = [];
       
-      dojo.forEach(this.showDay.stages, function(stageLineup) {
+      dojo.forEach(this.showDay.venues, function(venueLineup) {
         
         // create a single column for all the shows
         var venueLineupNode = put(this.bodyNode, 'td.venue div.artist-lineup');
         
-        dojo.forEach(stageLineup.shows, function(setInfo ) {
+        dojo.forEach(venueLineup.shows, function(setInfo ) {
 
           var showBox = put(venueLineupNode, 'div.show-box');
           // the show box is sized and placed based on the time information
