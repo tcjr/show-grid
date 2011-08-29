@@ -1,7 +1,9 @@
+
 .event-grid table {
     table-layout: fixed;
     width: 100%;
     border-collapse:collapse;
+    font-family: "Arial";
 }
 
 .event-grid .egrid-body {
@@ -10,9 +12,9 @@
 
 .event-grid .egrid-header th {
   /*style*/
-  font-family: "Impact";
+  font-family: "Arial";
   font-size: 1.6em;
-  font-weight: normal;
+  font-weight: 900;
   /*structure*/
   height: 3.2em;
   padding: 0 0 0.5em;

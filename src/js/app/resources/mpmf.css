@@ -1,0 +1,31 @@
+
+/* MPMF-specific styles */
+
+.mpmf.event-grid table {
+  font-family: "Arial Narrow";
+}
+
+.mpmf.event-grid .egrid-header th {
+  font-family: "Arial Narrow";
+  font-size: 1.4em;
+  font-weight: 900;
+  background-color: #555555;
+  color: #ffffff;
+}
+
+.mpmf .artist-lineup .show-title {
+  font-size: 1.2em;
+}
+
+.mpmf .artist-lineup .show-time {
+  font-family:"Arial";
+  font-size: 1.2em;
+  color: #CED1D5; /*light grey*/
+  color: #222222;
+}
+
+.mpmf .artist-lineup .show-box {
+  background-color: #EE432A; /*red*/
+  color: #ffffff;
+  border-radius: 3px;
+}
