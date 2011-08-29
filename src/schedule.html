@@ -20,24 +20,18 @@
 
     require(['dojo', 'sgrid/EventGrid', 'dojo/date', 'app/TEMP_GLOBAL_DATA', 'dojo/domReady!'], function(dojo, EGrid, DD) {
 
-      // Data fixup: add in show lengths
-      // dojo.forEach(GLOBAL_FEST_DATA.show_days[0].stages, function(stageData) {
-      //   
-      //   dojo.forEach(stageData.shows, function(show) {
-      //     // estimate show length at 45 mins
-      //     if (!('length' in show)) {
-      //       show.length = 45;
-      //     }
-      //   });
-      // });
-      
       var thurGrid = new EGrid({showDay: GLOBAL_FEST_DATA.show_days[0]}, 'thursday-grid');
+      var friGrid = new EGrid({showDay: GLOBAL_FEST_DATA.show_days[1]}, 'friday-grid');
       
     });    
   </script>
   
   <h1>Thursday</h1>
   <div id="thursday-grid">
+  </div>
+  
+  <h1>Friday</h1>
+  <div id="friday-grid">
   </div>
   
 </body>

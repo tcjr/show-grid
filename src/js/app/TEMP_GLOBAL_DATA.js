@@ -1,4 +1,24 @@
 
+GLOBAL_FRIDAY_STAGES = [
+  { 
+   stage: { name: "Grammers Deweys Pizza Main Stage", code: "" },
+   shows: [ { start: "09/23/2011 9:30 PM", name: "Okkervil River" },
+            { start: "09/23/2011 8:00 PM", name: "Viva Voce" },
+            { start: "09/23/2011 7:00 PM", name: "The Parson Red Heads" } ]
+  }, 
+  { 
+   stage: { name: "Know Theater on the Bioré Strip Main", code: "" },
+   shows: [ { start: "09/23/2011 11:45 PM", name: "Deefhoof" },
+            { start: "09/23/2011 10:30 PM", name: "Fairmount Girls" },
+            { start: "09/23/2011 9:30 PM", name: "Cheyenne Marie Mize" } ]
+  }, 
+  { 
+   stage: { name: "Know Theater on the Bioré Strip Second", code: "" },
+   shows: [ { start: "09/23/2011 11:00 PM", name: "Lora-Faye" },
+            { start: "09/23/2011 10:00 PM", name: "Kelly Fine" } ]
+  }
+];
+
 GLOBAL_THURSDAY_STAGES = [
   { 
    stage: { name: "Arnold's", code: "" },
@@ -124,7 +144,16 @@ GLOBAL_FEST_DATA = {
       schedule_start: "09/22/2011 07:00 PM",
       schedule_end: "09/23/2011 01:30 AM",
       default_show_length: 45
+    },
+    
+    {
+      title: "Friday Night",
+      stages: GLOBAL_FRIDAY_STAGES,
+      schedule_start: "09/23/2011 07:00 PM",
+      schedule_end: "09/24/2011 01:30 AM",
+      default_show_length: 45
     }
+    
   ],
 };
 
