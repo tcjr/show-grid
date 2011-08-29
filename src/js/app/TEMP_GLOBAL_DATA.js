@@ -70,11 +70,11 @@ GLOBAL_THURSDAY_STAGES = [
    shows: [ { start: "09/22/2011 11:00 PM", name: "Santah" },
             { start: "09/22/2011 10:00 PM", name: "The Record Summer" },
             { start: "09/22/2011 9:00 PM", name: "Spruce Leaves" },
-            { start: "8:00 PM", name: "TBA" } ]
+            { start: "09/22/2011 8:00 PM", name: "TBA" } ]
   }, 
   { 
    stage: { name: "MOTR", code: "" },
-   shows: [ { start: "09/22/2011 09/23/2011 12:00 AM", name: "Mansions on the Moon" },
+   shows: [ { start: "09/23/2011 12:00 AM", name: "Mansions on the Moon" },
             { start: "09/22/2011 11:00 PM", name: "Beat Connection" },
             { start: "09/22/2011 10:00 PM", name: "In Tall Buildings" },
             { start: "09/22/2011 9:00 PM", name: "The Color Pharmacy" } ]
@@ -122,7 +122,8 @@ GLOBAL_FEST_DATA = {
       title: "Thursday Night",
       stages: GLOBAL_THURSDAY_STAGES,
       schedule_start: "09/22/2011 07:00 PM",
-      schedule_end: "09/23/2011 01:30 AM"
+      schedule_end: "09/23/2011 01:30 AM",
+      default_show_length: 45
     }
   ],
 };

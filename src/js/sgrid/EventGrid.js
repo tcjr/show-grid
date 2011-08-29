@@ -94,15 +94,14 @@ function(dojo, put, DD, DF) {
     
     renderBody: function() {
       var ul = put(this.bodyNode, 'th.times ul.schedule-times');
-
-      // dojo.forEach(['11:30', '11:45', '12:00', '12:15', '12:30'], function(time) {
-      //   put(ul, 'li $', time);
-      // });
       
       console.debug("renderBody; this = %o", this);
       dojo.forEach( timeIncrements(this.showDay.schedule_start, this.showDay.schedule_end), function(time) {
         put(ul, 'li $', time);
       });
+
+      var PX_PER_MIN = 2;
+      var startOfDay = new Date(this.showDay.schedule_start);
       
       var venueLineupNodes = [];
       
@@ -116,10 +115,9 @@ function(dojo, put, DD, DF) {
           var showBox = put(venueLineupNode, 'div.show-box');
           // the show box is sized and placed based on the time information
           //console.debug("calculating info from setInfo=%o", setInfo)
-          var PX_PER_MIN = 2;
-          var START_OF_DAY = new Date('09/22/2011 07:00 PM');
-          var startOffset = (DD.difference(START_OF_DAY, new Date(setInfo.start), 'minute') * PX_PER_MIN);
-          var height = (parseInt(setInfo.length) * PX_PER_MIN) - 1; // shave a pixel off
+          var startTime =  new Date(setInfo.start);
+          var startOffset = (DD.difference(startOfDay, startTime, 'minute') * PX_PER_MIN);
+          var height = (parseInt(setInfo.length || this.showDay.default_show_length || 15) * PX_PER_MIN) - 1; // shave a pixel off
           //console.debug("math... startOffset = %o; height = %o", startOffset, height);
           
           dojo.style(showBox, {
@@ -127,7 +125,7 @@ function(dojo, put, DD, DF) {
             top: startOffset+'px'
           });
 
-          put(showBox, 'div.show-container strong.show-title $ +span.show-time $', setInfo.name, setInfo.start)
+          put(showBox, 'div.show-container strong.show-title $ +span.show-time $', setInfo.name, DF.format(startTime, {selector: 'time'}))
 
         }, this);
 
