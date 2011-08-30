@@ -48,14 +48,12 @@
       };
       
       var switchToSample = function(sampleInfo) {
-        // var showData = GLOBAL_JF_DATA.show_days[0];
         var loadedShowData = dojo.xhrGet({
           url: sampleInfo.url,
           handleAs: 'json'
         });
         
         dojo.when(loadedShowData, dojo.partial(displaySampleData, sampleInfo));
-        
         //dojo.when(loadedShowData, updateCode);
       };
       
