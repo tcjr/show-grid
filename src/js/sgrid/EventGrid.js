@@ -55,7 +55,12 @@ function(dojo, put, DD, DF) {
     
     create: function(opts, srcNodeRef) {
 
-      this.showDay = opts.showDay;
+      if ('showDay' in opts) {
+        this.showDay = opts.showDay;
+        this._delayRender = false;
+      } else {
+        this._delayRender = true;
+      }
 
       var domNode = srcNodeRef || put("div");
       this.domNode = domNode;
@@ -64,10 +69,13 @@ function(dojo, put, DD, DF) {
     	this.id = domNode.id = domNode.id || this.id || nextId();
       
       put(domNode, '.event-grid');
-      this.render();
+      if (!this._delayRender) {
+        this.render();
+      }
     },
     
     render: function() {
+      this.domNode.innerHTML = '<br/>';
       this.headerNode = put(this.domNode, 'div.egrid-header');
       this.bodyNode = put(this.domNode, 'div.egrid-body');
       
@@ -133,10 +141,13 @@ function(dojo, put, DD, DF) {
         
       }, this);
       
-    }
-    
+    },
 
     // =====
+    
+    setShowDayData: function(data) {
+      this.showDay = data;
+    }
     
     
   });

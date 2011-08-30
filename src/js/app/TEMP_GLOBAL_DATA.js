@@ -214,6 +214,6 @@ GLOBAL_JF_DATA = {
       default_show_length: 30
     }
     
-  ],
+  ]
 };
 

@@ -15,34 +15,95 @@
   
   </style>
 </head>
-<body>
+<body class="claro">
   <script data-dojo-config="async:1" src="js/dojo/dojo.js"></script>
 
   <script type="text/javascript">
 
-    require(['dojo', 'sgrid/EventGrid', 'dojo/date', 'app/TEMP_GLOBAL_DATA', 'dojo/domReady!'], function(dojo, EGrid, DD) {
+    var SAMPLES = [
+      {
+        title: "Chicago Jazz Fest, Saturday 9/3",
+        css_class: "chijf",
+        url: "data/chi-jazz-sat.json"
+      },
+      {
+        title: "MidPoint Music Fest, Thursday 9/22",
+        css_class: "mpmf",
+        url: "data/mpmf-thur.json"
+      }
+    ];
 
-      var thurGrid = new EGrid({showDay: GLOBAL_MPMF_DATA.show_days[0]}, 'thursday-grid');
-      var friGrid = new EGrid({showDay: GLOBAL_MPMF_DATA.show_days[1]}, 'friday-grid');
 
-      var jfSatGrid = new EGrid({showDay: GLOBAL_JF_DATA.show_days[0]}, 'jf-saturday-grid');
+    require(['dojo', 'sgrid/EventGrid', 'dijit/form/Select', 'dojox/json/ref', 'dojox/highlight', 'dojox/highlight/languages/javascript', 'dojo/domReady!'], function(dojo, EGrid) {
 
+      var currentCssClass = '';
+      var theGrid = new EGrid({}, 'the-grid');
+
+      
+      var displaySampleData = function(sampleInfo, data) {
+        console.debug("arguments = %o", arguments)
+        dojo.removeClass('the-grid', currentCssClass);
+        currentCssClass = sampleInfo.css_class
+        dojo.addClass('the-grid', currentCssClass);
+        
+        theGrid.setShowDayData( data );
+        theGrid.render();
+      };
+      
+      var switchToSample = function(sampleInfo) {
+        // var showData = GLOBAL_JF_DATA.show_days[0];
+        var loadedShowData = dojo.xhrGet({
+          url: sampleInfo.url,
+          handleAs: 'json'
+        });
+        
+        dojo.when(loadedShowData, dojo.partial(displaySampleData, sampleInfo));
+        
+        //dojo.when(loadedShowData, updateCode);
+      };
+      
+      var updateCode = function(resp) {
+        var str = dojox.json.ref.toJson(resp, true)
+        //console.debug("resp is %s", str);
+        dojo.byId('raw-data').innerHTML = str;
+        dojox.highlight.init(dojo.byId('raw-data'));
+      }
+
+      sampleSelect = new dijit.form.Select({
+        name: 'sample',
+        options: dojo.map(SAMPLES, function(s, idx) { return { label: s.title, value: idx}; }),
+      }, 'sample-select');
+      
+      
+      dojo.connect(sampleSelect, 'onChange', function(idx){
+        console.debug("Changed!  args=%o", arguments);
+        switchToSample(SAMPLES[idx]);
+      });
+
+      // I tried to initialize with a random sample, but the select control doesn't seem to work correctly
+      //var ridx = Math.floor(Math.random()*SAMPLES.length);
+      //sampleSelect.set('value', ridx);
+      //switchToSample(SAMPLES[ridx]);
+      switchToSample(SAMPLES[0]);
+ 
     });
   </script>
   
-  <h1>Chicago Jazz Festival - Saturday</h1>
-  <div id="jf-saturday-grid" class="chijf">
+  Choose a sample: <div id="sample-select"></div>
+  
+  <h1>The Grid</h1>
+  <div id="the-grid" class="">
   </div>
   
-
-  
-  <h1>Thursday</h1>
-  <div id="thursday-grid" class="mpmf">
+  <hr/>
+  <!--
+  <div>
+    <pre>
+      <code id="raw-data">
+      </code>
+    </pre>
   </div>
-  
-  <h1>Friday</h1>
-  <div id="friday-grid">
-  </div>
+  -->
   
 </body>
 </html>

@@ -1,2 +1,4 @@
 @import '../../dojo/resources/dojo.css';
 @import '../../dijit/themes/claro/claro.css';
+
+@import '../../dojox/highlight/resources/highlight.css';
