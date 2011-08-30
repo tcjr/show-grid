@@ -2,3 +2,8 @@
 @import '../../dijit/themes/claro/claro.css';
 
 @import '../../dojox/highlight/resources/highlight.css';
+
+body {
+  /* font-size: 62.5%; */
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}

@@ -1,5 +1,8 @@
 
 /* MPMF-specific styles */
+.mpmf {
+  font-size: 80%;
+}
 
 .mpmf.event-grid table {
   font-family: "Arial Narrow";

@@ -1,8 +1,7 @@
 
 /* Chicago Jazzfest-specific styles */
-
 .chijf.event-grid .egrid-body {
-  background-image: none;
+  background-image: url('bg-jf.png');
 }
 
 .chijf.event-grid table {
@@ -10,7 +9,6 @@
 }
 
 .chijf.event-grid .egrid-header th {
-  background-color: #2b1b28;
   background-color: #000000;
   color: #c8a4d0;
 }
