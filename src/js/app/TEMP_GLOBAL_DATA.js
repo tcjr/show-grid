@@ -177,7 +177,7 @@ GLOBAL_JF_DATA = {
         },
 
         {
-          venue: { name: "The Chicago Community Trust Young Jazz Lions StagePhil Woods" },
+          venue: { name: "The Chicago Community Trust Young Jazz Lions Stage" },
           shows: [
             { start: "09/03/2011 12:00 PM", length:30, name: "Curie Percussion Jazz Combo" },
             { start: "09/03/2011 12:45 PM", length:30, name: "Jones College Prep Jazz Combo" },

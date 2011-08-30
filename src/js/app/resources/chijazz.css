@@ -1,24 +1,31 @@
 
 /* Chicago Jazzfest-specific styles */
 
+.chijf.event-grid .egrid-body {
+  background-image: none;
+}
+
 .chijf.event-grid table {
   font-family: "Arial";
 }
 
 .chijf.event-grid .egrid-header th {
-  background-color: #FDF1CC;
-  color: #A91344;
+  background-color: #2b1b28;
+  background-color: #000000;
+  color: #c8a4d0;
 }
 
 .chijf .artist-lineup .show-title {
 }
 
 .chijf .artist-lineup .show-time {
-  color: #FDF1CC;
+  color: #c8a4d0;
 }
 
 .chijf .artist-lineup .show-box {
-  background-color: #26235F; 
+  background-color: #3e2239; 
   color: #ffffff;
   border-radius: 3px;
 }
+
+
