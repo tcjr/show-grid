@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="js/app/resources/app.css">
   <link rel="stylesheet" href="js/app/resources/show-grid.css">
   <link rel="stylesheet" href="js/app/resources/mpmf.css">
+  <link rel="stylesheet" href="js/app/resources/chijazz.css">
   <style type="text/css">
   body {
     font-size: 62.5%;
@@ -21,11 +22,19 @@
 
     require(['dojo', 'sgrid/EventGrid', 'dojo/date', 'app/TEMP_GLOBAL_DATA', 'dojo/domReady!'], function(dojo, EGrid, DD) {
 
-      var thurGrid = new EGrid({showDay: GLOBAL_FEST_DATA.show_days[0]}, 'thursday-grid');
-      var friGrid = new EGrid({showDay: GLOBAL_FEST_DATA.show_days[1]}, 'friday-grid');
-      
-    });    
+      var thurGrid = new EGrid({showDay: GLOBAL_MPMF_DATA.show_days[0]}, 'thursday-grid');
+      var friGrid = new EGrid({showDay: GLOBAL_MPMF_DATA.show_days[1]}, 'friday-grid');
+
+      var jfSatGrid = new EGrid({showDay: GLOBAL_JF_DATA.show_days[0]}, 'jf-saturday-grid');
+
+    });
   </script>
+  
+  <h1>Chicago Jazz Festival - Saturday</h1>
+  <div id="jf-saturday-grid" class="chijf">
+  </div>
+  
+
   
   <h1>Thursday</h1>
   <div id="thursday-grid" class="mpmf">
