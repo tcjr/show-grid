@@ -1,14 +1,14 @@
 
 /* Chicago Jazzfest-specific styles */
-.chijf.event-grid .egrid-body {
+.chijf.lineup-cubes .cubes-body {
   background-image: url('bg-jf.png');
 }
 
-.chijf.event-grid table {
+.chijf.lineup-cubes table {
   font-family: "Arial";
 }
 
-.chijf.event-grid .egrid-header th {
+.chijf.lineup-cubes .cubes-header th {
   background-color: #000000;
   color: #c8a4d0;
 }

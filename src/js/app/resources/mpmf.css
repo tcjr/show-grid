@@ -4,11 +4,11 @@
   font-size: 80%;
 }
 
-.mpmf.event-grid table {
+.mpmf.lineup-cubes table {
   font-family: "Arial Narrow";
 }
 
-.mpmf.event-grid .egrid-header th {
+.mpmf.lineup-cubes .cubes-header th {
   font-family: "Arial Narrow";
   font-size: 1.4em;
   font-weight: 900;

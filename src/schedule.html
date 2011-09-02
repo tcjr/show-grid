@@ -4,13 +4,9 @@
   <meta charset="utf-8">
   <title>Schedule</title>
   <link rel="stylesheet" href="js/app/resources/app.css">
-  <link rel="stylesheet" href="js/app/resources/show-grid.css">
+  <link rel="stylesheet" href="js/lineup/css/lineup.css">
   <link rel="stylesheet" href="js/app/resources/mpmf.css">
   <link rel="stylesheet" href="js/app/resources/chijazz.css">
-  <style type="text/css">
-
-  
-  </style>
 </head>
 <body class="claro">
   <script data-dojo-config="async:1" src="js/dojo/dojo.js"></script>
@@ -31,7 +27,7 @@
     ];
 
 
-    require(['dojo', 'sgrid/EventGrid', 'dijit/form/Select', 'dojox/json/ref', 'dojox/highlight', 'dojox/highlight/languages/javascript', 'dojo/domReady!'], function(dojo, EGrid) {
+    require(['dojo', 'lineup/Cubes', 'dijit/form/Select', 'dojox/json/ref', 'dojox/highlight', 'dojox/highlight/languages/javascript', 'dojo/domReady!'], function(dojo, EGrid) {
 
       var currentCssClass = '';
       var theGrid = new EGrid({}, 'the-grid');
