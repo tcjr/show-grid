@@ -5,16 +5,23 @@ dependencies = {
     mini: true,
     optimize: 'shrinksafe',
     releaseName: 'js',
-    stripConsole: 'all',
+    stripConsole: 'none',
 
     layers: [
-        { name: '../app/_base.js', resourceName: 'app._base', dependencies: [ 'app._base', 'app.main' ] }
+        { 
+          name: '../app/all.js', 
+          resourceName: 'app.all', 
+          dependencies: [ 
+            'app.all'
+          ] 
+        }
     ],
 
     prefixes: [
         [ 'dijit', '../dijit' ],
         [ 'dojox', '../dojox' ],
-        [ 'put-selector', '../put-selector']
+        [ 'put-selector', '../put-selector'],
+        [ 'lineup', '../lineup'],
         [ 'app', '../app' ]
     ],
 
