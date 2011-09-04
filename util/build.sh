@@ -31,20 +31,14 @@ cd "$TOOLSDIR"
 
 if which node >/dev/null; then
     node ../../dojo/dojo.js load=build "profile=$PROFILE" "releaseDir=$DISTDIR" "$@"
-elif which java >/dev/null; then
-    java -Xms256m -Xmx256m  -cp ../shrinksafe/js.jar:../closureCompiler/compiler.jar:../shrinksafe/shrinksafe.jar org.mozilla.javascript.tools.shell.Main  ../../dojo/dojo.js baseUrl=../../dojo load=build "profile=$PROFILE" "releaseDir=$DISTDIR" "$@"
 else
-    echo "Need node.js or Java to build!"
+    echo "Need node.js to build!"
     exit 1
 fi
 
 cd "$UTILDIR"
 
-# copy the index.html and make it production-friendly
-cp "$SRCDIR/index.html" "$DISTDIR/index.html"
-cp "$SRCDIR/versions.html" "$DISTDIR/versions.html"
-
-sed -i '' -e "s/    <!-- This is removed automatically by the Dojo Boilerplate build script in production. -->//" \
- -e "s/<script>isDebug = true;<\/script>//" "$DISTDIR/index.html"
+# copy the html
+cp "$SRCDIR/schedule.html" "$DISTDIR/schedule.html"
 
 echo "Build complete"
