@@ -13,3 +13,6 @@
 [submodule "src/js/put-selector"]
 	path = src/js/put-selector
 	url = https://github.com/kriszyp/put-selector.git
+[submodule "src/js/lineup"]
+	path = src/js/lineup
+	url = git@github.com:tcjr/lineup.git
