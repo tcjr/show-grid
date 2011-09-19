@@ -1,50 +1,50 @@
 {
-  title: "Saturday Lineup",
-  venues: [
+  "title": "Saturday Lineup",
+  "venues": [
     {
-      venue: { name: "Jazz on Jackson Stage" },
-      shows: [
-        { start: "09/03/2011 12:00 PM", length:55, name: "Brian O'Hern and the Model Citizens Big Band" },
-        { start: "09/03/2011 1:10 PM", length:55, name: "Marquis Hill Black-tet" },
-        { start: "09/03/2011 2:20 PM", length:55, name: "Jeremy Kahn and the Pepper Adams Project" },
-        { start: "09/03/2011 3:30 PM", length:60, name: "Gerald Clayton Trio" }
+      "venue": { "name": "Jazz on Jackson Stage" },
+      "shows": [
+        { "start": "09/03/2011 12:00 PM", "length":55, "name": "Brian O'Hern and the Model Citizens Big Band" },
+        { "start": "09/03/2011 1:10 PM", "length":55, "name": "Marquis Hill Black-tet" },
+        { "start": "09/03/2011 2:20 PM", "length":55, "name": "Jeremy Kahn and the Pepper Adams Project" },
+        { "start": "09/03/2011 3:30 PM", "length":60, "name": "Gerald Clayton Trio" }
       ]
     },
 
     {
-      venue: { name: "The Chicago Community Trust Young Jazz Lions Stage" },
-      shows: [
-        { start: "09/03/2011 12:00 PM", length:30, name: "Curie Percussion Jazz Combo" },
-        { start: "09/03/2011 12:45 PM", length:30, name: "Jones College Prep Jazz Combo" },
-        { start: "09/03/2011 1:30 PM", length:30, name: "Whitney Young Magnet Jazz Combo" },
-        { start: "09/03/2011 2:15 PM", length:40, name: "Fatum Brothers Jazz Orchestra" },
-        { start: "09/03/2011 3:10 PM", length:40, name: "Kenwood Academy Jazz ensemble" },
-        { start: "09/03/2011 4:05 PM", length:50, name: "DePaul University Jazz Ensemble with special guest Phil Woods" },
-        { start: "09/03/2011 6:00 PM", length:50, name: "Buddy Fambro Band" },
-        { start: "09/03/2011 7:15 PM", length:75, name: "Keith Henderson Band" }
+      "venue": { "name": "The Chicago Community Trust Young Jazz Lions Stage" },
+      "shows": [
+        { "start": "09/03/2011 12:00 PM", "length":30, "name": "Curie Percussion Jazz Combo" },
+        { "start": "09/03/2011 12:45 PM", "length":30, "name": "Jones College Prep Jazz Combo" },
+        { "start": "09/03/2011 1:30 PM", "length":30, "name": "Whitney Young Magnet Jazz Combo" },
+        { "start": "09/03/2011 2:15 PM", "length":40, "name": "Fatum Brothers Jazz Orchestra" },
+        { "start": "09/03/2011 3:10 PM", "length":40, "name": "Kenwood Academy Jazz ensemble" },
+        { "start": "09/03/2011 4:05 PM", "length":50, "name": "DePaul University Jazz Ensemble with special guest Phil Woods" },
+        { "start": "09/03/2011 6:00 PM", "length":50, "name": "Buddy Fambro Band" },
+        { "start": "09/03/2011 7:15 PM", "length":75, "name": "Keith Henderson Band" }
       ]
     },
 
     {
-      venue: { name: "Cricket Jazz and Heritage Stage" },
-      shows: [
-        { start: "09/03/2011 12:30 PM", length:60, name: "Miguel de la Cerna Quartet" },
-        { start: "09/03/2011 2:00 PM", length:60, name: "Petra’s Recession Seven" },
-        { start: "09/03/2011 3:30 PM", length:60, name: "Latin Inspiration" }
+      "venue": { "name": "Cricket Jazz and Heritage Stage" },
+      "shows": [
+        { "start": "09/03/2011 12:30 PM", "length":60, "name": "Miguel de la Cerna Quartet" },
+        { "start": "09/03/2011 2:00 PM", "length":60, "name": "Petra’s Recession Seven" },
+        { "start": "09/03/2011 3:30 PM", "length":60, "name": "Latin Inspiration" }
       ]
     },
 
     {
-      venue: { name: "Petrillo Music Shell" },
-      shows: [
-        { start: "09/03/2011 5:00 PM", length:50, name: "Maurice Brown Effect" },
-        { start: "09/03/2011 6:00 PM", length:55, name: "Trio 3 + Geri Allen featuring Andrew Cyrille, Reggie Workman & Oliver Lake" },
-        { start: "09/03/2011 7:10 PM", length:60, name: "Orbert Davis’ Philharmonic Chamber Ensemble" },
-        { start: "09/03/2011 8:30 PM", length:60, name: "Cassandra Wilson" }
+      "venue": { "name": "Petrillo Music Shell" },
+      "shows": [
+        { "start": "09/03/2011 5:00 PM", "length":50, "name": "Maurice Brown Effect" },
+        { "start": "09/03/2011 6:00 PM", "length":55, "name": "Trio 3 + Geri Allen featuring Andrew Cyrille, Reggie Workman & Oliver Lake" },
+        { "start": "09/03/2011 7:10 PM", "length":60, "name": "Orbert Davis’ Philharmonic Chamber Ensemble" },
+        { "start": "09/03/2011 8:30 PM", "length":60, "name": "Cassandra Wilson" }
       ]
     }
   ],
-  schedule_start: "09/03/2011 12:00 PM",
-  schedule_end: "09/03/2011 10:30 PM",
-  default_show_length: 30
+  "schedule_start": "09/03/2011 12:00 PM",
+  "schedule_end": "09/03/2011 10:30 PM",
+  "default_show_length": 30
 }

@@ -11,7 +11,8 @@
 <body class="claro">
   <script type="text/javascript">isDebug = true;</script>
   <script data-dojo-config="async:1" src="js/dojo/dojo.js"></script>
-  <!-- script src="js/app/all.js"></script -->
+  
+  <script src="js/app/all.js"></script>
 
   <script type="text/javascript">
 
@@ -28,11 +29,40 @@
       }
     ];
 
-    require(['app/SchedulePage', 'dojo/domReady!'], function(SchedulePage) {
+    require(['app/SchedulePage', 'dojo/on', 'dojo/mouse', 'dojo/domReady!'], function(SchedulePage, on, mouse) {
       
       var thisPage = new SchedulePage('the-grid', 'sample-select', SAMPLES);
       //thisPage.switchToSample(SAMPLES[0]);
       thisPage.switchToSample(0);
+      
+
+      dm = dojo.mouse;
+      
+      //
+      console.debug("linking events")
+      on(dojo.byId('the-grid'), '.show-box:click', function(evt) {
+        console.debug("show box clicked!  this=%o; event=%o", this, evt);
+        var id = dojo.attr(this, 'data-show-id');
+        console.debug("Event: %o", thisPage.theGrid._lookupEvent(id));
+      });
+      
+      console.debug("linking venues")
+      on(dojo.byId('the-grid'), '.cubes-header th:click', function(evt) {
+        console.debug("venue clicked!  this=%o; event=%o", this, evt);
+        var id = dojo.attr(this, 'data-venue-id');
+        console.debug("Venue: %o", thisPage.theGrid._lookupVenue(id));
+      });
+      
+      // console.debug("mouse.enter is %o", mouse.enter);
+      // on(dojo.byId('the-grid'), mouse.enter, function(evt) {
+      //   console.debug("hovering... args: %o", arguments);
+      //   dojo.addClass(evt.target, "hovering");
+      // });
+      // on(dojo.byId('the-grid'), mouse.leave, function(evt){
+      //   console.debug("unhovering... args: %o", arguments);
+      //   dojo.removeClass(evt.target, "hovering");
+      // });
+      
       
     });
 

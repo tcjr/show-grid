@@ -32,3 +32,14 @@
   color: #ffffff;
   border-radius: 3px;
 }
+
+.mpmf .artist-lineup .show-box.hovering {
+  box-shadow: 0 0 5px 5px #aaaaaa;
+  z-index: 100;
+  color: black;
+  background-color: white;
+}
+
+.mpmf .artist-lineup .show-box.hovering .show-title {
+  color: #EE432A;
+}
